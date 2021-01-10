@@ -1,6 +1,6 @@
-import time
-import pandas as pd
 import calendar
+import pandas as pd
+import time
 
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
@@ -13,7 +13,7 @@ def is_y_or_n(answer):
     lowered_answer = answer.lower()
     return lowered_answer == 'y' or lowered_answer == 'n'
 
-def ask_y_or_n_question(question):
+def prompt_user_confirmation(question):
     while True:
         answer = input(question)
         if is_y_or_n(answer):
@@ -41,7 +41,7 @@ def get_filters():
             break
 
     # get user input for month (all, january, february, ... , june)
-    should_filter_by_month = ask_y_or_n_question('Would you like to filter by "month"? (y/n) ')
+    should_filter_by_month = prompt_user_confirmation('Would you like to filter by "month"? (y/n) ')
     if should_filter_by_month == 'y':
         while True:
             filter_by_month = input('Please enter month: (all, january, february, ... , june): ')
@@ -53,7 +53,7 @@ def get_filters():
                 print('[Invalid Input] please try again.')
 
     # get user input for day of week (all, monday, tuesday, ... sunday)
-    should_filter_by_day = ask_y_or_n_question('Would you like to filter by "day"? (y/n) ')
+    should_filter_by_day = prompt_user_confirmation('Would you like to filter by "day"? (y/n) ')
     if should_filter_by_day == 'y':
         while True:
             filter_by_day = input('Please enter day of week (all, monday, tuesday, ... sunday): ')
@@ -189,7 +189,7 @@ def user_stats(df, city):
 
 
 def display_raw_data(df):
-    should_filter_by_month = ask_y_or_n_question('Would you like see 5 lines of raw data? (y/n) ')
+    should_filter_by_month = prompt_user_confirmation('Would you like see 5 lines of raw data? (y/n) ')
     if should_filter_by_month == 'y':
         print(df.head())
 
@@ -201,7 +201,7 @@ def display_raw_data(df):
             while len(df.iloc[next_start_index:]) > 0:
                 remaining_rows = len(df.iloc[next_start_index:])
                 show_more_msg = 'There are {} / {} rows of data left. Would like to see another {} more lines of raw data? (y/n) '.format(remaining_rows, total_rows, rows_per_page)
-                show_more_ans = ask_y_or_n_question(show_more_msg)
+                show_more_ans = prompt_user_confirmation(show_more_msg)
                 if show_more_ans == 'y':
                     checkpoint = next_start_index + rows_per_page
                     rows_to_print = df.iloc[next_start_index:checkpoint + 1]
