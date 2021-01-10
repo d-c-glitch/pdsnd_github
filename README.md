@@ -8,8 +8,13 @@ Explore US Bikeshare Data
 Use Python to understand U.S. bikeshare data. Calculate statistics and build an interactive environment where a user chooses the data and filter for a dataset to analyze.
 
 ### Files used
-Include the files used
+- chicago.csv
+- new_york_city.csv
+- washington.csv
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+- [NumPy](https://numpy.org/)
+- [Pandas](https://pandas.pydata.org/)
+- [The Python Standard Library](https://docs.python.org/3/library/)
+- [Udacity - Programming for Data Science with Python](https://www.udacity.com/course/programming-for-data-science-nanodegree--nd104)
 
