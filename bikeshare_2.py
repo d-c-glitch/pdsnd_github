@@ -1,6 +1,6 @@
-import time
-import pandas as pd
 import calendar
+import pandas as pd
+import time
 
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
