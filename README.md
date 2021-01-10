@@ -16,5 +16,5 @@ Use Python to understand U.S. bikeshare data. Calculate statistics and build an 
 - [NumPy](https://numpy.org/)
 - [Pandas](https://pandas.pydata.org/)
 - [The Python Standard Library](https://docs.python.org/3/library/)
-- [Udacity - Programming for Data Science with Python](https://www.udacity.com/course/programming-for-data-science-nanodegree--nd104)
+- [Udacity NANODEGREE PROGRAM - Programming for Data Science with Python](https://www.udacity.com/course/programming-for-data-science-nanodegree--nd104)
 
